@@ -1,16 +1,5 @@
-// var list_name = document.querySelectorAll("input[type='text']");
 
-// function focusNext(e){
-//     for(let i = 0; i<list_name.length; i++){
-//         if(e.keyCode === 13 ){
-//             list_name[i+1].focus();
-//         }
-//     }
-// }
-
-//validate Name
-
-
+// validate name
 let name_value = document.querySelector("input[name='name']");
 
 function updateName(event){
@@ -31,18 +20,15 @@ function validateName(str){
     return result.join(' ');
 }
 
-// validateSex
 function validateSex(){
-    let male = document.querySelectorAll("input[name='male']");
-    let female = document.querySelectorAll("input[name='female']");
-    if(!male.checked && !female.checked){
+    let sex = document.querySelector("input[name='sex']");
+    if(!sex.checked){
         document.querySelector('.error_sex').style.display="block";
         document.querySelector('.error_sex').innerHTML = "Bạn chưa chọn giới tính"
     }else{
         document.querySelector('.error_sex').style.display="none";
     }
 }
-
 // validate Email
 function validateEmail(){
 
@@ -89,12 +75,25 @@ function validatePassword(){
     
 }
 function validateBirthday(){
+    var pattern =/^([0-9]{2})\/([0-9]{2})\/([0-9]{4})$/;
     let birthday = document.querySelector("input[name='date_of_birth']");
-    if(birthday.value == ""){
+    if(birthday.value == "" || pattern.test(birthday.value) == false){
         document.querySelector('.error_birthday').style.display="block";
-        document.querySelector('.error_birthday').innerHTML="Bạn chưa nhập ngày sinh"
+        document.querySelector('.error_birthday').innerHTML="Ngày sinh không hợp lệ"
     }else{
         document.querySelector('.error_birthday').style.display="none";
+    }
+}
+
+// validate subject
+function valideateSubject(){
+    let subject = document.querySelector("input[name='subject']");
+    if(!subject.checked){
+        document.querySelector('.error_subject').style.display="block";
+        document.querySelector('.error_subject').innerHTML="Bạn chưa chọn môn học";
+
+    }else{
+        document.querySelector('.error_subject').style.display="none";
     }
 }
 function validate(){
@@ -103,6 +102,7 @@ function validate(){
     validateEmail();
     validateUserName()
     validatePassword();
+    valideateSubject()
 }
 
 // Auto focus next input
