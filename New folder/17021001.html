@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Website cá nhân</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div>
+
+        <div>
+            <label>Họ và tên</label>
+            <input type="text" class="color" autofocus name="name" id="name" onkeypress="updateName(event)" onkeydown="focusNext(event)">
+            <span class="error"></span>
+            <br>
+        </div>
+        <div>
+            <label>Địa chỉ</label>
+            <input type="text" class="text" name="address" id="address" onkeydown="focusNext(event)">
+            <br>
+        </div>
+        <div>
+            <label for="">Giới tính</label>
+            <input type="radio" name="male">Nam
+            <input type="radio" name="female">Nữ
+            <span class="err error_sex"></span>
+            <br>
+        </div>
+        <div>
+            <label for="">Ngày sinh</label>
+            <input type="text" class="color text" name="date_of_birth" id="date_of_birth"  onkeydown="focusNext(event)">
+            <span class="err error_birthday"></span>
+            <br>
+        </div>
+        <div>
+            <label for="">Email</label>
+            <input type="text" class="color text" name="email" id="email"  onkeydown="focusNext(event)">
+            <span class="err error_email"></span>
+            <br>
+        </div>
+
+        <div>
+            <label for="">Điện thoại</label>
+            <input type="text" class="text" name="phone" id="phone"  onkeydown="focusNext(event)">
+            <br>
+        </div>
+        <div>
+            <label for="">Khóa đăng kí</label>
+            <input type="checkbox" name="subject">Tiếng Anh
+            <input type="checkbox" name="subject">Quản trị
+            <input type="checkbox" name="subject">CNTT
+            <span class="err error_subject"></span>
+            <br>
+        </div>
+
+        <div>
+            <label for="">Tên sử dụng</label>
+            <input type="text" class="color text" name="username" id="username"  onkeydown="focusNext(event)">
+            <span class="err error_username"></span>
+            <br>
+        </div>
+
+        <div>
+            <label for="">Mật khẩu</label>
+            <input type="password" class="color text" name="password" id="password"  onkeydown="focusNext(event)">
+            <span class="err error_password"></span>
+            <br>
+        </div>
+        <div>
+            <label for="">Nhập lại mật khẩu</label>
+            <input type="password" class="color text" name="password_again" id="password_again"  onkeydown="focusNext(event)">
+            <span class="err error_password_again"></span>
+            <br>
+        </div>
+        <div class="note">
+            <label>Ghi chú</label>
+            <textarea name="note" cols="30" rows="5" class="text" id="note"  onkeydown="focusNext(event)"></textarea>
+            <br>
+            <label for=""></label>
+            <input type="submit" value="Chấp nhận" onclick="validate()">
+            <input type="submit" value="Bỏ qua">
+
+        </div>
+
+
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>

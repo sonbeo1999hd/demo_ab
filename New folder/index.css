@@ -1,0 +1,15 @@
+.color{
+    background: rgb(1,255,255);
+}
+label{
+    display: inline-block;
+    min-width: 200px;
+}
+
+div{
+    margin-bottom: 10px;
+}
+.err{
+    color: red;
+    display: none;
+}
